@@ -100,16 +100,16 @@
 
 &state_default {
 	gpio {
-		ralink,group = "i2c", "uartf", "nd_sd", "rgmii2";
-		ralink,function = "gpio";
+		groups = "i2c", "uartf", "nd_sd", "rgmii2";
+		function = "gpio";
 	};
 };
 
 &pinctrl {
 	phy_reset_pins: phy-reset {
 		gpio {
-			ralink,group = "spi refclk";
-			ralink,function = "gpio";
+			groups = "spi refclk";
+			function = "gpio";
 		};
 	};
 };
@@ -122,7 +122,6 @@
 	pinctrl-names = "default";
 	pinctrl-0 = <&rgmii1_pins &mdio_pins &phy_reset_pins>;
 
-	mediatek,portmap = "l";
 	mediatek,mdio-mode = <1>;
 
 	phy-reset-gpios = <&gpio1 15 GPIO_ACTIVE_LOW>;
